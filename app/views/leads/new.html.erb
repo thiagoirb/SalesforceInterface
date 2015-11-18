@@ -1,0 +1,61 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+
+<h1>New lead in Salesforce</h1>
+
+<%= form_for :lead, url: leads_path do |l| %>
+  
+  <h2>Salesforce account</h2>
+  
+  <p>
+    <%= l.label :salesforce_username %><br>
+    <%= l.text_field :salesforce_username , :required => true%>
+  </p>
+  
+  <p>
+    <%= l.label :salesforce_password %><br>
+    <%= l.text_field :salesforce_password , :required => true%>
+  </p>
+  
+  <h2>New lead</h2>
+  
+  <p>
+    <%= l.label :name %><br>
+    <%= l.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= l.label :last_name %><br>
+    <%= l.text_field :last_name , :required => true%>
+  </p>
+ 
+  <p>
+    <%= l.label :email %><br>
+    <%= l.text_field :email %>
+  </p>
+  
+   <p>
+    <%= l.label :company %><br>
+    <%= l.text_field :company , :required => true%>
+  </p>
+  
+   <p>
+    <%= l.label :job_title %><br>
+    <%= l.text_field :job_title %>
+  </p>
+ 
+  <p>
+    <%= l.label :phone %><br>
+    <%= l.text_field :phone %>
+  </p>
+  
+  <p>
+    <%= l.label :website %><br>
+    <%= l.text_field :website %>
+  </p>
+ 
+  <p>
+    <%= l.submit %>
+  </p>
+<% end %>
